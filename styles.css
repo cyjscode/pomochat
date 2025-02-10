@@ -37,25 +37,35 @@ body::before {
 }
 
 .timer-container {
-    display: grid;
-    /*place-content: start;*/
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+    place-items: center;
+    
 }
 .timer {
     font-size: 2rem;
     text-align: start;
-    margin-left: 63px;
+    
 }
 
 .timerButtons {
     margin-top: 20px;
-    margin-left: 32px;
+    
 }
 .chat-box, .ledger {
     border: 1px solid #bebebe;
     padding: 10px;
     height: 300px;
     overflow-y: auto;
+}
+
+.select {
+    width: 356px;
+}
+
+.hidden {
+    display: none;
 }
 
 .chat-container {
@@ -121,8 +131,8 @@ body::before {
 }
 
 .avatar {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-size: cover;
 }
