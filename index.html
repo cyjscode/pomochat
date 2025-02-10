@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomo Chat & Task Echo Ledger</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="response-ui.js" defer></script>
+    <script src="timer-music.js" defer></script>
+    <script src="main-aichat.js" defer></script>
+    <script src="reward-ui.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Timer Section -->
+        <div class="timer-container">
+            <h2 style="font-size: 29px">Countdown Timer</h2>
+            <div class="timer" id="timer" style="font-size: 42px">00:00</div>
+            <div class="timerButtons">
+                <button onclick="startTimer(5 * 60)">5 min</button>
+                <button onclick="startTimer(30 * 60)">30 min</button>
+                <button onclick="startTimer(60 * 60)">1 hour</button>
+            </div>
+        </div>
+        
+        <!-- Chat Section -->
+        <div class="chat-container">
+            <h2>Stack Chat</h2>
+            <select class="dropdown" id="personality">
+                <option value="boss">Boss</option>
+                <option value="supportive_boss">Supportive Boss</option>
+                <option value="coworker">Comical Coworker</option>
+                <option value="mentor">Mentor</option>
+                <option value="chill_coworker">Chill Coworker</option>
+                <option value="overachiever_coworker">Overachiever Coworker</option>
+                <option value="senior_dev">Senior Developer</option>
+                <option value="junior_dev">Junior Developer</option>
+                <option value="project_manager">Project Manager</option>
+                <option value="designer">UX/UI Designer</option>
+                <option value="qa_tester">QA Tester</option>
+                <option value="tech_lead">Tech Lead</option>
+
+                <option value="studio_director">Studio Boss</option>
+                <option value="creative_director">Creative Director</option>
+                <option value="art_director">Art Director</option>
+                <option value="lead_modeler">Lead 3D Modeler</option>
+                <option value="senior_modeler">Senior 3D Modeler</option>
+                <option value="junior_modeler">Junior 3D Modeler</option>
+                <option value="texturing_artist">Texturing Artist</option>
+                <option value="lighting_artist">Lighting Artist</option>
+                <option value="rigging_artist">Rigging Artist</option>
+                <option value="animator">3D Animator</option>
+                <option value="vfx_supervisor">VFX Supervisor</option>
+                <option value="render_specialist">Render Specialist</option>
+                <option value="pipeline_td">Pipeline Technical Director</option>
+                <option value="motion_capture_lead">Motion Capture Lead</option>
+                <option value="game_asset_designer">Game Asset Designer</option>
+                <option value="virtual_production_director">Virtual Production Director</option>
+                <option value="environment_artist">Environment Artist</option>
+                <option value="character_artist">Character Artist</option>
+                <option value="sculpting_specialist">Sculpting Specialist</option>
+            </select>
+            <div class="chat-box" id="chat"></div>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your response..." onkeypress="handleInput(event)">
+                <button class="send-button" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div id="audio-selector">
+            <div id="forest" class="theme" onclick="playAudioSoundLoop()"><!--🌲 -->Forest</div>
+            <div id="office" class="theme" onclick="playAudioSoundLoop()">Office</div>
+            <div id="rain" class="theme" onclick="playAudioSoundLoop()"><!--🌧 -->Rainy</div>
+            <div id="city" class="theme" onclick="playAudioSoundLoop()"><!--🧘 -->City</div>
+            <div id="cafe" class="theme" onclick="playAudioSoundLoop()"><!--☕ -->Caf&eacute</div>
+        </div>
+        
+        <!-- Ledger Section -->
+        <div class="ledger-container">
+            <h2>Task Echo Ledger</h2>
+            <div class="ledger rewardCent" id="ledger"></div>
+        </div>
+    </div>
+</body>
+</html>
