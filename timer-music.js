@@ -20,6 +20,13 @@ function startTimer(duration) {
     }, 1000);
 }
 
+function finishTaskQ() {
+    setTimeout(() => {
+        clearInterval(countdown);
+        triggerChat();
+    }, 700);
+}
+
 function removeClassFromChildDiv() {
     const parent = document.getElementById('audio-selector');
     if (parent) {
