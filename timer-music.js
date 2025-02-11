@@ -21,6 +21,7 @@ function startTimer(duration) {
 }
 
 function finishTaskQ() {
+    console.log('Task Finished')
     setTimeout(() => {
         clearInterval(countdown);
         triggerChat();
