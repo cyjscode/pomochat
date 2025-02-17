@@ -108,6 +108,8 @@ function clearChatRewards() {
     if (chatbox) chatbox.innerHTML = "";
     if (rewardBox) rewardBox.innerHTML = "";
 
+    taskCount = 0;
+
     // Remove saved chat data from IndexedDB
     openDB().then(db => {
         let transaction = db.transaction(STORE_NAME, "readwrite");

@@ -155,6 +155,8 @@ const rewardMessages = [
     
 ];
 
+let taskCount = 0; // Track the number of completed tasks
+
 // 🔹 Function to Log Task Completion and Reward
 function logTaskCompletion() {
     const ledger = document.getElementById('ledger');
@@ -180,8 +182,10 @@ function logTaskCompletion() {
         entry.style.transform = "translateY(0)";
     }, 300);
 
+    ledger.scrollTop = ledger.scrollHeight;
+
     // 🔹 Check for Milestone Reward
-    if (taskCount % 5 === 0) {
+    if (taskCount > 1 && taskCount % 5 === 0) {
         showMilestoneReward(taskCount);
     }
 }
@@ -202,4 +206,10 @@ function showMilestoneReward(count) {
         milestone.style.opacity = "1";
         milestone.style.transform = "translateY(0)";
     }, 300);
+
+    ledger.scrollTop = ledger.scrollHeight;
+
+    currentAudio = new Audio("https://cdn.freesound.org/previews/531/531510_7614679-lq.mp3");
+    currentAudio.play();
+
 }
